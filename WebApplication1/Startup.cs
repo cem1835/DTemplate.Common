@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using DTemplate.Common.MassTransit;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,6 @@ namespace WebApplication1
         {
             services.AddControllersWithViews();
 
-            //services.AddAutofac();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -36,6 +36,7 @@ namespace WebApplication1
             builder.UseMassTransit();
 
             builder.UseRequestCreator();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

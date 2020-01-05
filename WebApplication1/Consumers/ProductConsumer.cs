@@ -13,7 +13,7 @@ namespace WebApplication1.Consumers
         {
             var data = context.Message;
 
-             await context.RespondAsync(data);
+             await context.RespondAsync("cem");
 
         }
     }
