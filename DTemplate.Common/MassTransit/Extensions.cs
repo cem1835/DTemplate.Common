@@ -39,5 +39,11 @@ namespace DTemplate.Common.MassTransit
             });
         }
 
+        public static void UseRequestCreator(this ContainerBuilder builder)
+        {
+            builder.RegisterType<RequestCreator>().As<IRequestCreator>().SingleInstance();
+
+        }
+
     }
 }
