@@ -13,7 +13,7 @@ namespace DTemplate.Common
         public string Message { get; set; }
         public ServiceResultType ServiceResultType { get; set; }
         public int ExceptionCode { get; set; }
-        public Exception Exception { get; set; }
+        public Exception Exception { get; set; } 
         public T Data { get; set; }
     }
 
