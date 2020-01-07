@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTemplate.Common", "DTemplate.Common\DTemplate.Common.csproj", "{D521C724-9F43-4CE0-A0FA-2A85BB0FB999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTemplate.Common", "DTemplate.Common\DTemplate.Common.csproj", "{D521C724-9F43-4CE0-A0FA-2A85BB0FB999}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{30A9F25F-6A21-43F5-90EE-2C6969DBADBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTemplate.Common.Test", "DTemplate.Common.Test\DTemplate.Common.Test.csproj", "{149EC59E-2D47-4481-9CBA-0905C11B80DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTemplate.Common.Test", "DTemplate.Common.Test\DTemplate.Common.Test.csproj", "{149EC59E-2D47-4481-9CBA-0905C11B80DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{777C82E9-D61F-4450-A4DB-410EAD469D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3B13966E-45CF-44D7-92C5-95FC23DBA866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3B13966E-45CF-44D7-92C5-95FC23DBA866}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

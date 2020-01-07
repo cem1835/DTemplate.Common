@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -24,6 +25,8 @@ namespace WebApplication1
 
         public IConfiguration Configuration { get; }
 
+        public ILifetimeScope AutofacContainer { get; private set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -33,10 +36,11 @@ namespace WebApplication1
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.UseMassTransit();
+            builder.UseMassTransit(Assembly.GetExecutingAssembly());
 
             builder.UseRequestCreator();
 
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +60,10 @@ namespace WebApplication1
             app.UseStaticFiles();
 
             app.UseRouting();
+            
+            this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+
+            AutofacContainer.Resolve<IBusControl>().Start();
 
             app.UseAuthorization();
 

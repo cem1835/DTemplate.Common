@@ -7,6 +7,6 @@ namespace DTemplate.Common.MassTransit
 {
     public interface IRequestCreator
     {
-        Task<TResponse> CreateRequest<TRequest, TResponse>(TRequest request) where TRequest : class where TResponse : class;
+        Task<TResponse> RequestResponse<TRequest, TResponse>(TRequest request, string exchange = "request_service") where TRequest : class where TResponse : class;
     }
 }

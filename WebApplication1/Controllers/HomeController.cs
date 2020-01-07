@@ -15,19 +15,20 @@ namespace WebApplication1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private readonly IRequestCreator _requestCreator;
+        private readonly IRequestCreator _request;
 
-        public HomeController(ILogger<HomeController> logger, IRequestCreator requestCreator)
+        public HomeController(ILogger<HomeController> logger, IRequestCreator request)
         {
             _logger = logger;
-            _requestCreator = requestCreator;
+            _request = request;
         }
 
         public async Task<IActionResult> Index()
         {
             var product = new Product();
+            product.Name = "PC";
 
-            var res  =  await _requestCreator.CreateRequest<Product, string>(product);
+            var res  =  await _request.RequestResponse<Product, ProductResult>(product);
 
             return View(res);
         }

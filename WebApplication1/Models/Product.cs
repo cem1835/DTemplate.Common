@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class Product:MessageCommand
+    public class Product 
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
     }
 
-    public interface MessageCommand
+    public class ProductResult
     {
-
+        public string Message { get; set; }
     }
+
 }

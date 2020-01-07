@@ -15,15 +15,16 @@ namespace DTemplate.Common.MassTransit
             _busControl = busControl;
         }
 
-        public async Task<TResponse> CreateRequest<TRequest, TResponse>(TRequest request) where TRequest : class where TResponse : class
+        public async Task<TResponse> RequestResponse<TRequest, TResponse>(TRequest request,string exchange="request_service") where TRequest : class where TResponse : class
         {
-            var uriAddress = new Uri("rabbitmq://localhost/request_service");
+                var uriAddress = new Uri("rabbitmq://localhost/" + exchange);
+                var timeout = TimeSpan.FromSeconds(5);
 
-            IRequestClient<TRequest, TResponse> client = _busControl.CreateRequestClient<TRequest, TResponse>(uriAddress, TimeSpan.FromSeconds(5));
+                var client = _busControl.CreateRequestClient<TRequest>(uriAddress, timeout);
 
-            var response = await client.Request(request);
+                var response = await client.GetResponse<TResponse>(request);
 
-            return response;
+                return response.Message;
         }
     }
 }
