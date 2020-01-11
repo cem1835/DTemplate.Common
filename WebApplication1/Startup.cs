@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace WebApplication1
 {
@@ -40,11 +41,11 @@ namespace WebApplication1
 
             builder.UseRequestCreator();
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -60,9 +61,10 @@ namespace WebApplication1
             app.UseStaticFiles();
 
             app.UseRouting();
-            
-            this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
 
+            AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+
+            // starting bus 
             AutofacContainer.Resolve<IBusControl>().Start();
 
             app.UseAuthorization();

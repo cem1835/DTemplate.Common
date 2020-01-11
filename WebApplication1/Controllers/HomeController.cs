@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApplication1.Models;
 
+
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
