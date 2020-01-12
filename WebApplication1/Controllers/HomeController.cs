@@ -26,6 +26,8 @@ namespace WebApplication1.Controllers
 
         public async Task<IActionResult> Index()
         {
+            _logger.LogWarning("My Test Logging");
+
             var product = new Product();
             product.Name = "PC";
 

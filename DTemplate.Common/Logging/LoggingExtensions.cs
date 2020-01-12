@@ -7,6 +7,7 @@ using Serilog.Sinks.Elasticsearch;
 using System;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using Serilog.Formatting.Elasticsearch;
 
 namespace DTemplate.Common.Logging
 {
@@ -14,6 +15,8 @@ namespace DTemplate.Common.Logging
     {
         public static IHostBuilder UseSeriLog(this IHostBuilder builder,string appName ,string elasticURL = "http://localhost:9200")
         {
+            // do not use uppercase on elastic index
+            string indexFormat = appName + "-log-{0:yyyy.MM.dd}";
             var logger = new LoggerConfiguration()
                                     .Enrich.FromLogContext()
                                     .Enrich.WithProperty("Application", appName)
@@ -22,7 +25,8 @@ namespace DTemplate.Common.Logging
                                     .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(elasticURL))
                                     {
                                         AutoRegisterTemplate = true,
-                                        IndexFormat = appName+"-log-{0:yyyy.MM.dd}"
+                                        IndexFormat = indexFormat,
+                                        CustomFormatter= new ExceptionAsObjectJsonFormatter(renderMessage: true)
                                     })
                                     .CreateLogger();
 
