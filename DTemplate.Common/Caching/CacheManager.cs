@@ -29,7 +29,7 @@ namespace DTemplate.Common.Caching
             Cache.Add(new CacheItem(key, data), policy);
         }
 
-        public bool IsAdd(string key)
+        public bool Exists(string key)
         {
             return Cache.Contains(key);
         }
