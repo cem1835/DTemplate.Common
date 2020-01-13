@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace DTemplate.Common.MongoRepository
 {
-    class MongoDbRepository<TEntity> : IMongoRepository<TEntity> where TEntity : IEntity
+    public class MongoRepository<TEntity> : IMongoRepository<TEntity> where TEntity : IEntity
     {
         protected IMongoCollection<TEntity> Collection { get; }
 
-        public MongoDbRepository(IMongoDatabase database)
+        public MongoRepository(IMongoDatabase database)
         {
             var collectionName = GetCollectionName<TEntity>();
 

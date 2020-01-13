@@ -19,7 +19,9 @@ namespace DTemplate.Common.MongoRepository
 
             builder.RegisterMongoDatabase();
 
-             new MongoInitializer().InitializeAsync();
+            new MongoInitializer().InitializeAsync();
+
+            builder.RegisterGeneric(typeof(IMongoRepository<>)).As(typeof(MongoRepository<>)).InstancePerLifetimeScope();
         }
 
         private static void RegisterMongoOptions(this ContainerBuilder builder)
