@@ -6,6 +6,7 @@ namespace DTemplate.Common.GenericRepo
 {
     public interface IEntity
     {
+        public Guid Id { get; set; }
         bool IsDeleted { get; set; }
         DateTime? CreatedAt { get; set; }
         DateTime? ModifiedAt { get; set; }
