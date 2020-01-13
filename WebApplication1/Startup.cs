@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using DTemplate.Common.Caching;
 using DTemplate.Common.MassTransit;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
@@ -14,6 +15,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebApplication1.Controllers;
+using WebApplication1.Services;
+using WebApplication1.Services.Interfaces;
 
 namespace WebApplication1
 {
@@ -32,12 +36,13 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.UseMassTransit(Assembly.GetExecutingAssembly());
+            builder.AddMicrosoftCache();
+            builder.RegisterWithCacheInterceptors<ProductService, IProductService>();
 
         }
 
