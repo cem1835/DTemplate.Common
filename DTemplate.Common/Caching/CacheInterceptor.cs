@@ -39,7 +39,7 @@ namespace DTemplate.Common.Caching
                 invocation.ReturnValue = _cacheManager.Get<object>(key);
             }
             else
-            {
+            { 
                 invocation.Proceed();
 
                 var cacheAttribute = GetCacheAttribute(invocation);
