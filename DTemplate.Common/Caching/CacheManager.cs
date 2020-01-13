@@ -32,7 +32,8 @@ namespace DTemplate.Common.Caching
 
             var policy = new CacheItemPolicy
             {
-                AbsoluteExpiration = absoluteExpiration
+                AbsoluteExpiration = absoluteExpiration,
+                SlidingExpiration = TimeSpan.FromDays(1)
             };
 
             Cache.Add(new CacheItem(key, data), policy);
