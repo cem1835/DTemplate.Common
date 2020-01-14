@@ -21,14 +21,14 @@ namespace DTemplate.Common.Caching
             Add(key, data, null);
         }
 
-        public void Add(string key, object data, double? cacheTime)
+        public void Add(string key, object data, TimeSpan? cacheTime)
         {
             if (data == null)
             { return; }
 
             var absoluteExpiration = ObjectCache.InfiniteAbsoluteExpiration;
             if (cacheTime.HasValue)
-                absoluteExpiration = DateTimeOffset.Now + TimeSpan.FromMinutes(cacheTime.Value);
+                absoluteExpiration = DateTimeOffset.Now + cacheTime.Value;
 
             var policy = new CacheItemPolicy
             {

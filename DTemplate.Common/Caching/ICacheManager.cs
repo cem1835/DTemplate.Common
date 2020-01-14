@@ -8,7 +8,7 @@ namespace DTemplate.Common.Caching
     {
         T Get<T>(string key);
         void Add(string key, object data);
-        void Add(string key, object data, double? cacheTime);
+        void Add(string key, object data, TimeSpan? cacheTime);
         bool Exists(string key);
         void Remove(string key);
         void RemoveByPattern(string pattern);

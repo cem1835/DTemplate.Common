@@ -44,7 +44,7 @@ namespace DTemplate.Common.Caching
 
                 var cacheAttribute = GetCacheAttribute(invocation);
 
-                _cacheManager.Add(key, invocation.ReturnValue,cacheAttribute.DurationMinute);
+                _cacheManager.Add(key, invocation.ReturnValue, TimeSpan.FromMinutes(cacheAttribute.DurationMinute));
             }
         }
 
