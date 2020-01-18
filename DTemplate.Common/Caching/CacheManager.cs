@@ -16,20 +16,29 @@ namespace DTemplate.Common.Caching
             return (T)Cache[key];
         }
 
-        public void Add(string key, object data, double cacheTime)
+        public void Add(string key, object data)
+        {
+            Add(key, data, null);
+        }
+
+        public void Add(string key, object data, TimeSpan? cacheTime)
         {
             if (data == null)
             { return; }
 
+            var absoluteExpiration = ObjectCache.InfiniteAbsoluteExpiration;
+            if (cacheTime.HasValue)
+                absoluteExpiration = DateTimeOffset.Now + cacheTime.Value;
+
             var policy = new CacheItemPolicy
             {
-                AbsoluteExpiration = DateTimeOffset.Now + TimeSpan.FromMinutes(cacheTime)
+                AbsoluteExpiration = absoluteExpiration
             };
 
             Cache.Add(new CacheItem(key, data), policy);
         }
 
-        public bool IsAdd(string key)
+        public bool Exists(string key)
         {
             return Cache.Contains(key);
         }
@@ -57,5 +66,6 @@ namespace DTemplate.Common.Caching
                 Remove(item.Key);
             }
         }
+
     }
 }

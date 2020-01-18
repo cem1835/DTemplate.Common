@@ -34,7 +34,7 @@ namespace DTemplate.Common.Caching
         {
             var key = GetInvocationKey(invocation);
 
-            if (_cacheManager.IsAdd(key))
+            if (_cacheManager.Exists(key))
             {
                 invocation.ReturnValue = _cacheManager.Get<object>(key);
             }
@@ -44,7 +44,7 @@ namespace DTemplate.Common.Caching
 
                 var cacheAttribute = GetCacheAttribute(invocation);
 
-                _cacheManager.Add(key, invocation.ReturnValue,cacheAttribute.DurationMinute);
+                _cacheManager.Add(key, invocation.ReturnValue, TimeSpan.FromMinutes(cacheAttribute.DurationMinute));
             }
         }
 
