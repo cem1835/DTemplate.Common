@@ -9,4 +9,9 @@ namespace DTemplate.Common.Caching
         public int DurationMinute { get; set; }
 
     }
+
+    public class CacheRemoveAttribute : Attribute
+    {
+        public string Key { get; set; }
+    }
 }

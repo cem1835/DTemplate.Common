@@ -21,8 +21,10 @@ namespace DTemplate.Common.Helper
                     continue;
 
                 var value = prop.GetValue(entity, null);
+              
                 if (value == null)
                     continue;
+                
                 if (baseEntity != null && baseEntity.Equals(value))
                     continue;
 
