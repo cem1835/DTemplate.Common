@@ -9,7 +9,7 @@ jobs:
 
     services:
       redis:
-        image: latest
+        image: "redis:latest"
         ports: 
         - "6379:6379"
     steps:
