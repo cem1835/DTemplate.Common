@@ -1,0 +1,10 @@
+﻿version: "3.1"
+services: 
+  rabbitMQ: 
+    restart: always
+    container_name: DCommon_RabbitMQ
+    image: "rabbitmq:3-management"
+    ports:
+    - "15672:15672"
+    - "5672:5672"
+    

@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace DTemplate.Common.Caching
 {
-    public class CacheManager : ICacheManager
+    public class MicrosoftCacheManager : ICacheManager
     {
         protected ObjectCache Cache => MemoryCache.Default;
 

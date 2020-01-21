@@ -13,7 +13,7 @@ namespace DTemplate.Common.Test.Caching
         [TestMethod]
         public void AbsoluteExpirationTest()
         {
-            var cacheManager = new CacheManager();
+            var cacheManager = new MicrosoftCacheManager();
             var data = new object();
             cacheManager.Add("object", data, TimeSpan.FromSeconds(5));
             Assert.IsTrue(cacheManager.Exists("object"));

@@ -12,7 +12,7 @@ namespace DTemplate.Common.Caching
     {
         public static void AddMicrosoftCache(this ContainerBuilder builder)
         {
-            builder.RegisterType<RedisCacheManager>().As<ICacheManager>();
+            builder.RegisterType<MicrosoftCacheManager>().As<ICacheManager>();
 
             builder.RegisterType<CacheInterceptor>().SingleInstance();
 

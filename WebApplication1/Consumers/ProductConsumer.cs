@@ -9,7 +9,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Consumers
 {
-    [Intercept(typeof(CacheManager))]
+    [Intercept(typeof(MicrosoftCacheManager))]
     public class ProductConsumer : IConsumer<Product>
     {
         public async Task Consume(ConsumeContext<Product> context)

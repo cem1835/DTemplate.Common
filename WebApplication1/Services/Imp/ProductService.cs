@@ -25,7 +25,7 @@ namespace WebApplication1.Services
             throw new NotImplementedException();
         }
 
-        [CacheAttributes(DurationMinute = 5)]
+        [Cache(DurationMinute = 5)]
         public ServiceResult<Product> Get(Expression<Func<Product, bool>> filter = null)
         {
             return new ServiceResult<Product>

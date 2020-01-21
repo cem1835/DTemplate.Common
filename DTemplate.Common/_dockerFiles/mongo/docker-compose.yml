@@ -1,0 +1,17 @@
+﻿version: '3.1'
+
+services:
+
+  testDB:
+   container_name: mongoDB
+   restart: always
+   image: mongo
+   #environment:
+            #MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+            #MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+            #MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+   volumes:
+     #- C:/DockerVolumes/mongodb/data:/data/db
+     - C:/DockerVolumes/mongodb//log/:/var/log/mongodb/
+   ports:
+     - "27017:27017"
