@@ -13,6 +13,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{777C82E9-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3B13966E-45CF-44D7-92C5-95FC23DBA866}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DockerFiles", "DockerFiles", "{3091EC64-9826-407A-A03C-DCB31DADAEB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "elk", "elk", "{5E0101B0-B9BF-4EDD-96CA-C6E54B03459C}"
+	ProjectSection(SolutionItems) = preProject
+		DTemplate.Common\_dockerFiles\elk\docker-compose.yml = DTemplate.Common\_dockerFiles\elk\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mongo", "mongo", "{D2A64834-084A-414D-A58E-7310FE0B65A5}"
+	ProjectSection(SolutionItems) = preProject
+		DTemplate.Common\_dockerFiles\mongo\docker-compose.yml = DTemplate.Common\_dockerFiles\mongo\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postgres", "postgres", "{E4946C83-8DE1-4484-8F34-581D9F4E10AA}"
+	ProjectSection(SolutionItems) = preProject
+		DTemplate.Common\_dockerFiles\postgres\docker-compose.yml = DTemplate.Common\_dockerFiles\postgres\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbit", "rabbit", "{49AF624F-EE5A-4A65-A649-5061D6AFD7E0}"
+	ProjectSection(SolutionItems) = preProject
+		DTemplate.Common\_dockerFiles\rabbitmq\docker-compose.yml = DTemplate.Common\_dockerFiles\rabbitmq\docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +61,11 @@ Global
 		{D521C724-9F43-4CE0-A0FA-2A85BB0FB999} = {30A9F25F-6A21-43F5-90EE-2C6969DBADBB}
 		{149EC59E-2D47-4481-9CBA-0905C11B80DB} = {30A9F25F-6A21-43F5-90EE-2C6969DBADBB}
 		{3B13966E-45CF-44D7-92C5-95FC23DBA866} = {777C82E9-D61F-4450-A4DB-410EAD469D06}
+		{3091EC64-9826-407A-A03C-DCB31DADAEB6} = {30A9F25F-6A21-43F5-90EE-2C6969DBADBB}
+		{5E0101B0-B9BF-4EDD-96CA-C6E54B03459C} = {3091EC64-9826-407A-A03C-DCB31DADAEB6}
+		{D2A64834-084A-414D-A58E-7310FE0B65A5} = {3091EC64-9826-407A-A03C-DCB31DADAEB6}
+		{E4946C83-8DE1-4484-8F34-581D9F4E10AA} = {3091EC64-9826-407A-A03C-DCB31DADAEB6}
+		{49AF624F-EE5A-4A65-A649-5061D6AFD7E0} = {3091EC64-9826-407A-A03C-DCB31DADAEB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40D63E86-7141-49D9-BE0A-2536C176908F}
