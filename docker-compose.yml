@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  elasticsearch:
+   image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+   container_name: Dcommon_ElasticSearch
+   ports:
+    - "9200:9200"
+   volumes:
+    - C:/DockerVolumes/elasticsearch-data:/usr/share/elasticsearch/data
+   networks:
+    - docker-network
+
+
+  kibana:
+   image: docker.elastic.co/kibana/kibana:7.5.1
+   container_name: Dcommon_Kibana
+   ports:
+    - "5601:5601"
+   depends_on:
+    - elasticsearch
+   networks:
+    - docker-network
+
+networks:
+  docker-network:
+    driver: bridge
+
+volumes:
+  elasticsearch-data:

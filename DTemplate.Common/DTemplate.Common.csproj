@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="App.Metrics" Version="3.2.0" />
+    <PackageReference Include="App.Metrics.AspNetCore.Health" Version="3.2.0" />
+    <PackageReference Include="App.Metrics.AspNetCore.Health.Endpoints" Version="3.2.0" />
+    <PackageReference Include="App.Metrics.AspNetCore.Health.Hosting" Version="3.2.0" />
+    <PackageReference Include="App.Metrics.Extensions.Reporting.ElasticSearch" Version="1.1.1" />
+    <PackageReference Include="App.Metrics.Formatters.Prometheus" Version="3.2.0" />
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
     <PackageReference Include="Castle.Core" Version="4.4.0" />
@@ -26,8 +32,15 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.0.1" />
-    <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+    <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
     <PackageReference Include="System.Runtime.Caching" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mailing\" />
+    <Folder Include="Authentication\" />
+    <Folder Include="Aspects\" />
+    <Folder Include="Swagger\" />
   </ItemGroup>
 
 </Project>

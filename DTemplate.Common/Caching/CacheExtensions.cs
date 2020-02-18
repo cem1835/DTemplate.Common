@@ -2,6 +2,7 @@
 using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,15 @@ namespace DTemplate.Common.Caching
             builder.RegisterType<CacheInterceptor>().SingleInstance();
 
         }
+
+        //public static void AddRedisCache(this IServiceCollection services)
+        //{
+        //    services.AddDistributedRedisCache(o =>
+        //    {
+        //        o.Configuration = "";
+        //        o.InstanceName = "";
+        //    });
+        //}
 
         public static ContainerBuilder RegisterWithCacheInterceptors<TImplementer,TService>(this ContainerBuilder builder)
         {

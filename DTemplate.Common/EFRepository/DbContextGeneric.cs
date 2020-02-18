@@ -5,18 +5,16 @@ using System.Text;
 
 namespace DTemplate.Common.GenericRepo
 {
-    public class DBContextGeneric
-    {
-        public DbContext Context { get; set; }
+    //public class DBContextGeneric:DbContext
+    //{
+    //    public DBContextGeneric(DbContext context)
+    //    {
+    //        Context = context;
+    //    }
 
-        public DBContextGeneric(DbContext context)
-        {
-            Context = context;
-        }
-
-        public TContext ConvertTo<TContext>() where TContext : DbContext
-        {
-            return (TContext)this.Context;
-        }
-    }
+    //    public TContext ConvertTo<TContext>() where TContext : DbContext
+    //    {
+    //        return (TContext)this.Context;
+    //    }
+    //}
 }

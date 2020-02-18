@@ -14,20 +14,21 @@ namespace DTemplate.Common.GenericRepo
     {
         public DbContext _context;
 
-        public EntityRepository(DBContextGeneric dbContextGeneric)
+        public EntityRepository(DbContext context)
         {
-            _context = dbContextGeneric.Context;
+            _context = context;
+
         }
 
 
 
-        public ServiceResult<TEntity> Get(Expression<Func<TEntity, bool>> filter)
+        public ServiceResult<TEntity> Get(Expression<Func<TEntity, bool>> filter=null)
         {
             ServiceResult<TEntity> serviceResult = new ServiceResult<TEntity>(ServiceResultType.Unknown);
 
             try
             {
-                serviceResult.Data = _context.Set<TEntity>().Where(x => x.IsDeleted == false).SingleOrDefault(filter);
+                serviceResult.Data = _context.Set<TEntity>().Where(x => x.IsDeleted == false).Where(filter).SingleOrDefault();
                 serviceResult.ServiceResultType = ServiceResultType.Success;
             }
             catch (Exception exception)
