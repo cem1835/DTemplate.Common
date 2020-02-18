@@ -20,8 +20,6 @@ namespace DTemplate.Common.GenericRepo
 
         }
 
-
-
         public ServiceResult<TEntity> Get(Expression<Func<TEntity, bool>> filter=null)
         {
             ServiceResult<TEntity> serviceResult = new ServiceResult<TEntity>(ServiceResultType.Unknown);

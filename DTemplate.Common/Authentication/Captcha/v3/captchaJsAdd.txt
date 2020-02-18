@@ -1,0 +1,10 @@
+﻿@inject DTemplate.Common.Authentication.Captcha.Model.GoogleReCaptchaModel GoogleReCaptcha
+
+<script src="https://www.google.com/recaptcha/api.js?render=@GoogleReCaptcha.Value.SiteKey"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('@GoogleReCaptcha.Value.SiteKey', { action: 'homepage' }).then(function(token) {
+            $("#Token").val(token);
+        });
+    });
+</script>

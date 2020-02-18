@@ -25,6 +25,7 @@
     <PackageReference Include="MassTransit.Autofac" Version="6.0.1" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.0" />
@@ -38,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="Mailing\" />
-    <Folder Include="Authentication\" />
     <Folder Include="Aspects\" />
     <Folder Include="Swagger\" />
   </ItemGroup>
